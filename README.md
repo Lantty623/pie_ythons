@@ -42,9 +42,6 @@ Added animal.py and test_animal.py
             -- human_to_house_cat():
             -- human_to_dog():
         test_animal.py function:
-        from animal import *
-        
-        test_animal.py
             -- test_house_cat():
             -- test_dog():
 
