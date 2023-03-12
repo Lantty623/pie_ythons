@@ -13,7 +13,7 @@ Concept:
 Lantty: 
 Created conversion.py and test.py to test it
 
-       conversion.py functions:
+       conversion.java functions:
             -- inches_to_cm   
             -- cm_to_inches    
             -- ft_height_to_inches
@@ -33,5 +33,22 @@ Created conversion.py and test.py to test it
             -- test_mile_to_meter()
             -- test_km_to_miles()
             -- test_miles_to_km()
+
+Added animal.py and test_animal.py
+
+        animal.py functions:
+            -- dog_chart
+            -- dog_by_breed_chart
+            -- human_to_house_cat():
+            -- human_to_dog():
+        test_animal.py function:
+        from animal import *
+        
+        test_animal.py
+            -- test_house_cat():
+            -- test_dog():
+
+Converted python file all to java
+        -- Files are in pie_ython.java
 
 
