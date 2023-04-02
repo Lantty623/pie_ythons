@@ -2,7 +2,18 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+
+
 public class Animal {
+    //From website: https://www.verywellfit.com/set-pedometer-better-accuracy-3432895
+    //We agree to use the average 5 6" stide length = 27
+    static double STRIDE_INCHES = 27;
+    static double STRIDE_CM = 68.58;
+    //CAT in inches
+    static double CAT = 2.0;
+    //Elephant in cm
+    static double ELEPHANT = 200;
+
     static Map<String, double[]> dog_chart = new HashMap<String, double[]>() {{
         put("Golden Retriever", new double[] {3.75, 9.5});
         put("Yorkshire Terrier", new double[] {1.5, 3.8});
@@ -26,17 +37,42 @@ public class Animal {
         put("ITTY BITTY", new double[] {1.5, 3.8});
     }};
 
-    public static double human_to_house_cat(double human, String unit) {
+    //int human = the number of step
+    public static double human_to_house_cat(int human, String unit) {
         double cat_step = 0;
+        double len = 0;
         if (unit.equals("inches")) {
-            cat_step = human / 2.0;
+            len = human * STRIDE_INCHES;
+            cat_step = len / CAT;
         } else if (unit.equals("cm")) {
-            double step = Conversion.cm_to_inches(human);
-            cat_step = step / 2.0;
+            double length = (human * STRIDE_CM);
+            len = Conversion.cm_to_inches(length);
+            cat_step = len / CAT;
         } else {
             System.out.println("Give me an inches/cm. Not " + unit);
         }
-        return cat_step;
+        return (int)(Math.round(cat_step));
+    }
+
+    //int human = the number of step
+    public static double human_to_elephant(int human, String unit) {
+        double ele_step = 0;
+        double len = 0;
+        if (unit.equals("inches")) {
+            double length = (human * STRIDE_INCHES);
+            len = Conversion.inches_to_cm(length);
+            ele_step = len / ELEPHANT;
+        } else if (unit.equals("cm")) {
+            len = human * STRIDE_CM;
+            ele_step = len / ELEPHANT;
+        } else {
+            System.out.println("Give me an inches/cm. Not " + unit);
+        }
+        if (ele_step < 1){
+            return ele_step;
+        }else{
+            return (int)(Math.round(ele_step));
+        }
     }
     
     public static double human_to_dog(double human, String unit) {
@@ -54,44 +90,46 @@ public class Animal {
             System.out.println("9. Great Dane");
             int option = scanner.nextInt();
             int index = 0;
+            double len = STRIDE_INCHES;
             if (unit.equals("cm")) {
                 index = 1;
+                len = STRIDE_CM;
             }
    
             switch (option) {
                 case 1:
-                    dog_step = human / dog_chart.get("Golden Retriever")[index];
+                    dog_step = (len*human) / dog_chart.get("Golden Retriever")[index];
                     break;
                 case 2:
-                    dog_step = human / dog_chart.get("Yorkshire Terrier")[index];
+                    dog_step = (len*human) / dog_chart.get("Yorkshire Terrier")[index];
                     break;
                 case 3:
-                    dog_step = human / dog_chart.get("Bulldog")[index];
+                    dog_step = (len*human) / dog_chart.get("Bulldog")[index];
                     break;
                 case 4:
-                    dog_step = human / dog_chart.get("Samoyed")[index];
+                    dog_step = (len*human) / dog_chart.get("Samoyed")[index];
                     break;
                 case 5:
-                    dog_step = human / dog_chart.get("Shiba Inu")[index];
+                    dog_step = (len*human) / dog_chart.get("Shiba Inu")[index];
                     break;
                 case 6:
-                    dog_step = human / dog_chart.get("Toy Poodle")[index];
+                    dog_step = (len*human) / dog_chart.get("Toy Poodle")[index];
                     break;
                 case 7:
-                    dog_step = human / dog_chart.get("Chihuahua")[index];
+                    dog_step = (len*human) / dog_chart.get("Chihuahua")[index];
                     break;
                 case 8:
-                    dog_step = human / dog_chart.get("German Shepherd")[index];
+                    dog_step = (len*human) / dog_chart.get("German Shepherd")[index];
                     break;
                 case 9:
-                    dog_step = human / dog_chart.get("Great Dane")[index];
+                    dog_step = (len*human) / dog_chart.get("Great Dane")[index];
                     break;
                 default:
                     System.out.println("No matching case");
                     break;
             }
         }
-        return dog_step;
+        return (int)(Math.round(dog_step));
     }
 
 }
