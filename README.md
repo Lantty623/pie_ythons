@@ -11,7 +11,9 @@ Concept:
     Step tracker application for mobile platforms that converts user steps to a step of an animal 
 
 Lantty: 
+    
     Created conversion.py and test.py to test it
+    These py file was converted into java file
 
            conversion.java functions:
                 -- inches_to_cm   
@@ -23,7 +25,7 @@ Lantty:
                 -- mile_to_meter
                 -- km_to_miles
                 -- miles_to_km
-            test.py - test all functionin coversion.py: 
+            test.java - test all functionin coversion.java: 
                 -- test_inches_to_cm()
                 -- test_cm_to_inches()
                 -- test_ft_height_to_inches()
@@ -34,18 +36,25 @@ Lantty:
                 -- test_km_to_miles()
                 -- test_miles_to_km()
 
-    Added animal.py and test_animal.py
+    Added animal.java and test_animal.java
 
-            animal.py functions:
+            animal.java functions:
+                -- STRIDE_INCHES
+                -- STRIDE_CM
+                -- CAT
+                -- ELEPHANT
                 -- dog_chart
                 -- dog_by_breed_chart
                 -- human_to_house_cat():
                 -- human_to_dog():
-            test_animal.py function:
+                -- huamn_to_elephant():
+            test_animal.java function:
                 -- test_house_cat():
                 -- test_dog():
+                -- test_elephant():
 
     Converted python file all to java 
             -- Files are in pie_ython.java
+    Update the file on April 2
 
 
