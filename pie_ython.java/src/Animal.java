@@ -9,10 +9,18 @@ public class Animal {
     //We agree to use the average 5 6" stide length = 27
     static double STRIDE_INCHES = 27;
     static double STRIDE_CM = 68.58;
-    //CAT in inches
-    static double CAT = 2.0;
+    //CAT in cm
+    static double CAT = 36;
     //Elephant in cm
     static double ELEPHANT = 200;
+    //Horse in Inches
+    static double HORSE = 144;
+    //Dog in cm 
+    static double LDOG = 35;
+    static double MDOG = 25;
+    static double SDOG = 15;
+    //kangaroo's stride is about 6 meter = 600 cm
+    static double KANGAROO = 600;
 
     static Map<String, double[]> dog_chart = new HashMap<String, double[]>() {{
         put("Golden Retriever", new double[] {3.75, 9.5});
@@ -38,15 +46,15 @@ public class Animal {
     }};
 
     //int human = the number of step
-    public static double human_to_house_cat(int human, String unit) {
+    public static double human_to_cat(int human, String unit) {
         double cat_step = 0;
         double len = 0;
         if (unit.equals("inches")) {
-            len = human * STRIDE_INCHES;
+            double length = (human * STRIDE_INCHES);
+            len = Conversion.inches_to_cm(length);
             cat_step = len / CAT;
         } else if (unit.equals("cm")) {
-            double length = (human * STRIDE_CM);
-            len = Conversion.cm_to_inches(length);
+            len = human * STRIDE_CM;
             cat_step = len / CAT;
         } else {
             System.out.println("Give me an inches/cm. Not " + unit);
@@ -54,7 +62,6 @@ public class Animal {
         return (int)(Math.round(cat_step));
     }
 
-    //int human = the number of step
     public static double human_to_elephant(int human, String unit) {
         double ele_step = 0;
         double len = 0;
@@ -74,8 +81,110 @@ public class Animal {
             return (int)(Math.round(ele_step));
         }
     }
+    //int human = the number of step
+    public static double human_to_horse(int human, String unit) {
+        double h_step = 0;
+        double len = 0;
+        if (unit.equals("inches")) {
+            len = human * STRIDE_INCHES;
+            h_step = len / HORSE;
+        } else if (unit.equals("cm")) {
+            double length = (human * STRIDE_CM);
+            len = Conversion.cm_to_inches(length);
+            h_step = len / HORSE;
+        } else {
+           System.out.println("Give me an inches/cm. Not " + unit);
+        }
+        if (h_step < 1){
+            return h_step;
+        }else{
+            return (int)(Math.round(h_step));
+        }
+    }
+
+    //int human = the number of step
+    public static double human_to_ldog(int human, String unit) {
+        double d_step = 0;
+        double len = 0;
+        if (unit.equals("inches")) {
+            double length = (human * STRIDE_INCHES);
+            len = Conversion.inches_to_cm(length);
+            d_step = len / LDOG;
+        } else if (unit.equals("cm")) {
+            len = human * STRIDE_CM;
+            d_step = len / LDOG;
+        } else {
+            System.out.println("Give me an inches/cm. Not " + unit);
+        }
+        if (d_step < 1){
+            return d_step;
+        }else{
+            return (int)(Math.round(d_step));
+        }
+    }
+
+    public static double human_to_mdog(int human, String unit) {
+        double d_step = 0;
+        double len = 0;
+        if (unit.equals("inches")) {
+            double length = (human * STRIDE_INCHES);
+            len = Conversion.inches_to_cm(length);
+            d_step = len / MDOG;
+        } else if (unit.equals("cm")) {
+            len = human * STRIDE_CM;
+            d_step = len / MDOG;
+        } else {
+            System.out.println("Give me an inches/cm. Not " + unit);
+        }
+        if (d_step < 1){
+            return d_step;
+        }else{
+            return (int)(Math.round(d_step));
+        }
+    }
+
+    public static double human_to_sdog(int human, String unit) {
+        double d_step = 0;
+        double len = 0;
+        if (unit.equals("inches")) {
+            double length = (human * STRIDE_INCHES);
+            len = Conversion.inches_to_cm(length);
+            d_step = len / SDOG;
+        } else if (unit.equals("cm")) {
+            len = human * STRIDE_CM;
+            d_step = len / SDOG;
+        } else {
+            System.out.println("Give me an inches/cm. Not " + unit);
+        }
+        if (d_step < 1){
+            return d_step;
+        }else{
+            return (int)(Math.round(d_step));
+        }
+    }
+
+    public static double human_to_kangaroo(int human, String unit) {
+        double k_step = 0;
+        double len = 0;
+        if (unit.equals("inches")) {
+            double length = (human * STRIDE_INCHES);
+            len = Conversion.inches_to_cm(length);
+            k_step = len / KANGAROO;
+        } else if (unit.equals("cm")) {
+            len = human * STRIDE_CM;
+            k_step = len / KANGAROO;
+        } else {
+            System.out.println("Give me an inches/cm. Not " + unit);
+        }
+        if (k_step < 1){
+            return k_step;
+        }else{
+            return (int)(Math.round(k_step));
+        }
+    }
+
     
-    public static double human_to_dog(double human, String unit) {
+    public static double human_to_dog_paw(double human, String unit) {
         double dog_step = 0;
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("What dog you want (Enter a number):");
