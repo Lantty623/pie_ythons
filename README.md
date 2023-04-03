@@ -43,15 +43,31 @@ Lantty:
                 -- STRIDE_CM
                 -- CAT
                 -- ELEPHANT
+                -- HORSE
+                -- LDOG
+                -- MDOG 
+                -- SDOG
+                -- KANGAROO
                 -- dog_chart
                 -- dog_by_breed_chart
-                -- human_to_house_cat():
-                -- human_to_dog():
+                -- human_to_cat():
+                -- human_to_dog_paw():
                 -- huamn_to_elephant():
+                -- human_to_horse():
+                -- human_to_ldog():
+                -- human_to_mdog():
+                -- human_to_sdog():
+                -- human_to_kangaroo():
             test_animal.java function:
                 -- test_house_cat():
-                -- test_dog():
+                -- test_dog_paw():
                 -- test_elephant():
+                -- test_horse():
+                -- test_ldog()
+                -- test_mdog():
+                -- test_sdog():
+                -- test_kangaroo():
+                
 
     Converted python file all to java 
             -- Files are in pie_ython.java
