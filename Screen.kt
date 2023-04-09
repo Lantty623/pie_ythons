@@ -65,8 +65,6 @@ fun set_layout() {
 @Composable
 fun DefaultPreview() {
     MyApplication2Theme {
-        //Greeting("Android")
-        //test_python()
         set_layout()
     }
 }
@@ -74,8 +72,8 @@ fun DefaultPreview() {
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun dropdown_menu(): String {
-    val contextForToast = LocalContext.current.applicationContext
     val listItems = arrayOf("Dog", "Cat", "Moose", "Duck", "Elephant")
+    val contextForToast = LocalContext.current.applicationContext
 
     // state of the menu
     var expanded by remember {
@@ -94,10 +92,12 @@ fun dropdown_menu(): String {
             expanded = !expanded
         }
     ) {
+        // text field
         TextField(
             value = selectedItem,
-            onValueChange = { selectedItem = it },
-            label = { Text(text = "Choose an animal") },
+            onValueChange = {},
+            readOnly = true,
+            label = { Text(text = "Label") },
             trailingIcon = {
                 ExposedDropdownMenuDefaults.TrailingIcon(
                     expanded = expanded
@@ -106,32 +106,24 @@ fun dropdown_menu(): String {
             colors = ExposedDropdownMenuDefaults.textFieldColors()
         )
 
-        // filter options based on text field value
-        val filteringOptions =
-            listItems.filter { it.contains(selectedItem, ignoreCase = true) }
-
-        if (filteringOptions.isNotEmpty()) {
-            // menu
-            ExposedDropdownMenu(
-                expanded = expanded,
-                onDismissRequest = { expanded = false }
-            ) {
-                // this is a column scope
-                // all the items are added vertically
-                filteringOptions.forEach { selectionOption ->
-                    // menu item
-                    DropdownMenuItem(
-                        onClick = {
-                            selectedItem = selectionOption
-                            Toast.makeText(contextForToast, selectedItem, Toast.LENGTH_SHORT).show()
-                            expanded = false
-                        }
-                    ) {
-                        Text(text = selectionOption)
-                    }
+        // menu
+        ExposedDropdownMenu(
+            expanded = expanded,
+            onDismissRequest = { expanded = false }
+        ) {
+            // this is a column scope
+            // all the items are added vertically
+            listItems.forEach { selectedOption ->
+                // menu item
+                DropdownMenuItem(onClick = {
+                    selectedItem = selectedOption
+                    Toast.makeText(contextForToast, selectedOption, Toast.LENGTH_SHORT).show()
+                    expanded = false
+                }) {
+                    Text(text = selectedOption)
                 }
             }
         }
     }
-    return selectedItem.lowercase()
+    return selectedItem.lowercase();
 }
