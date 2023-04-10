@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.example.healthrecord'
+    namespace 'com.example.animalstepper'
     compileSdk 33
 
     buildFeatures {
@@ -20,7 +20,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.healthrecord"
+        applicationId "com.example.animalstepper"
         minSdk 26
         targetSdk 33
         versionCode 1
@@ -36,8 +36,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_9
-        targetCompatibility JavaVersion.VERSION_1_9
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -47,13 +47,19 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.health.connect:connect-client:1.0.0-alpha11'
     implementation 'androidx.work:work-runtime:2.8.1'
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.core:core-ktx:1.10.0'
+    implementation 'androidx.core:core-ktx:1.10.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
-    implementation "androidx.compose.runtime:runtime:1.4.0"
-    implementation "androidx.compose.runtime:runtime-livedata:1.4.0"
-    implementation "androidx.compose.runtime:runtime-rxjava2:1.4.0"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1'
+    implementation "androidx.compose.runtime:runtime:1.4.1"
+    implementation "androidx.compose.runtime:runtime-livedata:1.4.1"
+    implementation "androidx.compose.runtime:runtime-rxjava2:1.4.1"
+    implementation "androidx.activity:activity-compose:1.7.0"
+    implementation "androidx.compose.foundation:foundation-layout:1.4.1"
+    implementation "androidx.compose.material:material:1.4.1"
+    implementation "androidx.compose.ui:ui-tooling-preview"
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
