@@ -2,6 +2,7 @@ package com.example.animalstepper.navigation
 
 import android.os.Bundle
 import android.telecom.Call
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -14,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.animalstepper.R
 import com.example.animalstepper.data.StepManager
 import com.example.animalstepper.navigation.screen.StepScreen
 import com.example.animalstepper.navigation.theme.AnimalStepperTheme
@@ -36,7 +38,6 @@ class MainActivity : ComponentActivity() {
 //        }
 
 
-
         setContent {
              AnimalStepperTheme{
                  val stepManager : StepManager = StepManager(applicationContext)
@@ -52,7 +53,11 @@ class MainActivity : ComponentActivity() {
                     //Greeting("Android")
                     //test_python()
                     //set_layout()
-                    StepScreen(steps = viewModel.footsteps.value, lengthUnit = "cm")
+
+                    StepScreen(steps = viewModel.footsteps.value,
+                        lengthUnit = "cm",
+                        url = viewModel.url.value
+                    )
                 }
             }
         }

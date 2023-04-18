@@ -13,6 +13,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.example.animalstepper.data.CatAPI
 import com.example.animalstepper.data.StepManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -26,6 +27,8 @@ class StepViewModel(private val stepManager : StepManager) : ViewModel() {
     var footsteps : MutableState<Long?> = mutableStateOf(0)
         private set
 
+    var url : MutableState<String> = mutableStateOf("")
+
     /*
     //NOTE: Look at codelab, implement this if we want to, requires a helper class
 
@@ -37,6 +40,7 @@ class StepViewModel(private val stepManager : StepManager) : ViewModel() {
     fun initialLoad(){
         viewModelScope.launch{
             getStepsLastDay()
+            updateURL()
         }
     }
 
@@ -45,6 +49,11 @@ class StepViewModel(private val stepManager : StepManager) : ViewModel() {
         val startOfDay = ZonedDateTime.now().minus(24, ChronoUnit.HOURS).toInstant()
         val now = Instant.now()
         footsteps.value = stepManager.retrieveSteps(startOfDay, now)
+    }
+
+    //Updates the URL
+    private suspend fun updateURL(){
+        url.value = CatAPI.loadImageURL()
     }
 }
 

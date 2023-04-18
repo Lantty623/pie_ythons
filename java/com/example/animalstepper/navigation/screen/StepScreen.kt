@@ -1,26 +1,42 @@
 package com.example.animalstepper.navigation.screen
 
 //import com.chaquo.python.Python
+import android.app.Activity
+import android.graphics.BitmapFactory
+import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.graphics.drawable.toBitmap
 import androidx.lifecycle.viewmodel.compose.viewModel
+import coil.compose.AsyncImage
+import com.example.animalstepper.R
 import com.example.animalstepper.data.Animal
+import com.example.animalstepper.data.CatAPI
 import com.example.animalstepper.navigation.theme.AnimalStepperTheme
+
 
 @Composable
 fun StepScreen(
     //modifier: Modifier = Modifier,
     //stepViewModel: StepViewModel = viewModel(),
     steps: Long?,
-    lengthUnit: String
+    lengthUnit: String,
+    url : String
 ) {
-    set_layout(steps, lengthUnit)
+    set_layout(steps, lengthUnit, url)
 }
 
 
@@ -70,22 +86,34 @@ fun Greeting(name: String) {
 }
 
 @Composable
-fun set_layout(steps: Long?, lengthUnit: String) {
+fun set_layout(steps: Long?, lengthUnit: String, url: String) {
     Column {
         val animal =  dropdown_menu()
         show_steps(steps)
         show_animal_steps(animal, steps, lengthUnit)
+        show_animal_picture(url)
     }
 }
 
+/*
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     AnimalStepperTheme {
         //Greeting("Android")
         //test_python()
-        set_layout(steps = 2000, lengthUnit = "cm")
+        set_layout(steps = 2000, lengthUnit = "cm", animal_picture = )
     }
+}
+ */
+
+@Composable
+fun show_animal_picture(url: String) {
+    println("\n\n\n url = $url \n\n\n")
+    AsyncImage(
+        model = url,
+        contentDescription = null
+    )
 }
 
 @OptIn(ExperimentalMaterialApi::class)
