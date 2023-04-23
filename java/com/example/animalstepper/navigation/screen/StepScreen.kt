@@ -31,12 +31,13 @@ import com.example.animalstepper.navigation.theme.AnimalStepperTheme
 @Composable
 fun StepScreen(
     //modifier: Modifier = Modifier,
-    //stepViewModel: StepViewModel = viewModel(),
+    stepViewModel: StepViewModel = viewModel(),
     steps: Long?,
     lengthUnit: String,
-    url : String
+    url : String,
+    fact : String
 ) {
-    set_layout(steps, lengthUnit, url)
+    set_layout(steps, lengthUnit, url, fact, stepViewModel)
 }
 
 
@@ -86,12 +87,13 @@ fun Greeting(name: String) {
 }
 
 @Composable
-fun set_layout(steps: Long?, lengthUnit: String, url: String) {
+fun set_layout(steps: Long?, lengthUnit: String, url: String, fact: String, stepViewModel: StepViewModel) {
     Column {
-        val animal =  dropdown_menu()
+        stepViewModel.animal.value = dropdown_menu(stepViewModel)
         show_steps(steps)
-        show_animal_steps(animal, steps, lengthUnit)
+        show_animal_steps(stepViewModel.animal.value, steps, lengthUnit)
         show_animal_picture(url)
+        show_fun_fact(fact)
     }
 }
 
@@ -116,9 +118,16 @@ fun show_animal_picture(url: String) {
     )
 }
 
+@Composable
+fun show_fun_fact(fact: String) {
+    Surface(color = Color.Gray) {
+        Text(text = fact)
+    }
+}
+
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun dropdown_menu(): String {
+fun dropdown_menu(stepViewModel: StepViewModel): String {
     val contextForToast = LocalContext.current.applicationContext
     //val listItems = arrayOf("Cat", "Elephant", "Horse", "Large Dog", "Medium Dog", "Small Dog", "Kangaroo")
     val listItems = Animal.ANIMAL_LIST
@@ -167,6 +176,7 @@ fun dropdown_menu(): String {
                     selectedItem = selectedOption
                     Toast.makeText(contextForToast, selectedOption, Toast.LENGTH_SHORT).show()
                     expanded = false
+                    stepViewModel.initialLoad()
                 }) {
                     Text(text = selectedOption)
                 }

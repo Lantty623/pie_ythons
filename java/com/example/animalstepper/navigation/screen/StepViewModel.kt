@@ -13,6 +13,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import com.example.animalstepper.data.AIFunFact
 import com.example.animalstepper.data.CatAPI
 import com.example.animalstepper.data.StepManager
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -29,6 +30,12 @@ class StepViewModel(private val stepManager : StepManager) : ViewModel() {
 
     var url : MutableState<String> = mutableStateOf("")
 
+    var fact : MutableState<String> = mutableStateOf("")
+
+    var animal : MutableState<String> = mutableStateOf("Cat")
+
+    var refresh : MutableState<Boolean> = mutableStateOf(false)
+
     /*
     //NOTE: Look at codelab, implement this if we want to, requires a helper class
 
@@ -41,6 +48,7 @@ class StepViewModel(private val stepManager : StepManager) : ViewModel() {
         viewModelScope.launch{
             getStepsLastDay()
             updateURL()
+            updateFact(animal.value)
         }
     }
 
@@ -54,6 +62,12 @@ class StepViewModel(private val stepManager : StepManager) : ViewModel() {
     //Updates the URL
     private suspend fun updateURL(){
         url.value = CatAPI.loadImageURL()
+    }
+
+    //Updates the fun fact message for the given animal
+    private suspend fun updateFact(animal : String){
+        val ai = AIFunFact()
+        fact.value = ai.loadFact(animal)
     }
 }
 
