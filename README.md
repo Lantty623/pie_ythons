@@ -23,4 +23,4 @@ Testing Instructions: \
 -- Walk and then see facts and images of the animal you choose from the drop down menu 
 
 Trooubleshoot: \
--- Make sure you have internet conenction 
+-- Make sure you have internet connection 
