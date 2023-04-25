@@ -13,7 +13,7 @@ Concept: \
 Team Structure and Meeting: \
 -- https://docs.google.com/document/d/176ttB70p2uE0LmmhHxdMhoGIVD3n947jXiXYKspades/edit?usp=sharing
 
-User Stories: \
+User Stories and Scope: \
 -- https://docs.google.com/document/d/1Q_1jYLXgFVITQ_D4KlP38XqJIrnu3eCdd26N737Pc0Y/edit?usp=sharing 
 
 
