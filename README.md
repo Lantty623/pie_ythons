@@ -1,6 +1,6 @@
 The πthons
 
-members:\
+Members:\
     Logan Durham \
     Lantty Chen \
     David Croft \
