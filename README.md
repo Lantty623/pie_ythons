@@ -15,6 +15,6 @@ User Stories: \
 -- link will be inserted here, please grab from team channel after it is change to read only
 
 Testing Instructions: \
--- Install animal stepper apk \
+-- Install Animal Stepper apk \
 -- Enable the "health Connect" app and allow the animal stepper app permissions for sensors/steps \
 -- Walk and then see facts and images of the animal you choose from the drop down menu 
