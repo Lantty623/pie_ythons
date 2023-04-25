@@ -10,9 +10,12 @@ Members:\
 Concept: \
 -- Step tracker application for mobile platforms that converts user steps to a step of an animal 
 
+Team Structure and Meeting: \
+-- <Insert here>
 
 User Stories: \
 -- https://docs.google.com/document/d/1Q_1jYLXgFVITQ_D4KlP38XqJIrnu3eCdd26N737Pc0Y/edit?usp=sharing 
+
 
 Testing Instructions: \
 -- Download and install Animal Stepper apk \
