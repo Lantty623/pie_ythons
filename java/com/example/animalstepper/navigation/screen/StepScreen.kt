@@ -1,16 +1,15 @@
 package com.example.animalstepper.navigation.screen
 
+//import com.chaquo.python.Python
 import android.app.Activity
 import android.graphics.BitmapFactory
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
 import androidx.compose.material.*
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
@@ -19,10 +18,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.core.graphics.drawable.toBitmap
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
@@ -47,13 +43,8 @@ fun StepScreen(
 
 @Composable
 fun show_steps(steps: Long?) {
-    Surface() {
-        Text(
-            text = "You've walked $steps steps!",
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(top = 16.dp)
-        )
+    Surface(color = Color.LightGray) {
+        Text(text = "You've walked $steps steps!")
     }
 }
 
@@ -74,38 +65,30 @@ fun show_animal_steps(animal: String, steps: Long?, lengthUnit: String) {
         }
     }
 
-    Surface() {
-        Text(text = "That's equivalent to $animalsteps $animal steps!",
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(top = 16.dp)
-        )
+    Surface(color = Color.Gray) {
+        Text(text = "That's equivalent to $animalsteps $animal steps!")
     }
 }
 
+/*
 @Composable
-fun header() {
-    Text(
-        text = "Animal Stepper",
-        fontSize = 50.sp,
-        fontWeight = FontWeight.Bold,
-        modifier = Modifier.padding(
-            top = 16.dp,
-            bottom = 16.dp
-        )
-    )
+fun test_python() {
+    val py = Python.getInstance()
+    val module = py.getModule("test")
+    val t = module.callAttr("test").toJava(String::class.java)
+
+    Text(text = t)
+}
+ */
+
+@Composable
+fun Greeting(name: String) {
+    Text(text = "Hello $name!")
 }
 
 @Composable
 fun set_layout(steps: Long?, lengthUnit: String, url: String, fact: String, stepViewModel: StepViewModel) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        header()
-        Box(
-            modifier = Modifier.height(4.dp).width(350.dp).background(color = Color.Magenta).padding(bottom = 16.dp)
-        )
+    Column {
         stepViewModel.animal.value = dropdown_menu(stepViewModel)
         show_steps(steps)
         show_animal_steps(stepViewModel.animal.value, steps, lengthUnit)
@@ -114,25 +97,31 @@ fun set_layout(steps: Long?, lengthUnit: String, url: String, fact: String, step
     }
 }
 
+/*
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    AnimalStepperTheme {
+        //Greeting("Android")
+        //test_python()
+        set_layout(steps = 2000, lengthUnit = "cm", animal_picture = )
+    }
+}
+ */
+
 @Composable
 fun show_animal_picture(url: String) {
     println("\n\n\n url = $url \n\n\n")
     AsyncImage(
         model = url,
-        contentDescription = null,
-        modifier = Modifier.padding(top = 32.dp)
+        contentDescription = null
     )
 }
 
 @Composable
 fun show_fun_fact(fact: String) {
     Surface(color = Color.Gray) {
-        Text(
-            text = fact,
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(top = 24.dp)
-        )
+        Text(text = fact)
     }
 }
 
@@ -156,7 +145,6 @@ fun dropdown_menu(stepViewModel: StepViewModel): String {
     // box
     ExposedDropdownMenuBox(
         expanded = expanded,
-        modifier = Modifier.padding(top = 32.dp, bottom = 16.dp),
         onExpandedChange = {
             expanded = !expanded
         }
