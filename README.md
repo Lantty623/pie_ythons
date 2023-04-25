@@ -12,7 +12,7 @@ Concept: \
 
 
 User Stories: \
--- link will be inserted here, please grab from team channel after it is change to read only
+-- https://docs.google.com/document/d/1Q_1jYLXgFVITQ_D4KlP38XqJIrnu3eCdd26N737Pc0Y/edit?usp=sharing \
 
 Testing Instructions: \
 -- Install Animal Stepper apk \
