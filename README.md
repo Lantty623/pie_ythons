@@ -1,11 +1,11 @@
 The πthons
 
 Members:\
-    Logan Durham \
-    Lantty Chen \
-    David Croft \
-    Shane O'Bannon \
-    David Novo 
+-- Logan Durham \
+-- Lantty Chen \
+-- David Harrison Croft \
+-- Shane Patrick O'Bannon \
+-- David N Novo 
 
 Concept: \
 -- Step tracker application for mobile platforms that converts user steps to a step of an animal 
