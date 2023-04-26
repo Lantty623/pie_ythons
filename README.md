@@ -19,7 +19,8 @@ User Stories and Scope: \
 
 Testing Instructions: \
 -- Download and install Animal Stepper apk \
--- Install (if not already) and enable the "Health Connect" app and allow the Animal Stepper app permissions for sensors/steps \
+-- Install (if not already) and open the "Health Connect" app : https://play.google.com/store/apps/details?id=com.google.android.apps.healthdata \
+-- In the Health Connect app, give the Animal Stepper app permissions for sensors/steps \
 -- Walk and then see facts and images of the animal you choose from the drop down menu 
 
 Trooubleshoot: \
