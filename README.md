@@ -7,6 +7,9 @@ Members:\
 -- Shane Patrick O'Bannon \
 -- David N Novo 
 
+Github: \
+-- https://github.com/Lantty623/pie_ythons
+
 Concept: \
 -- Step tracker application for mobile platforms that converts user steps to a step of an animal 
 
