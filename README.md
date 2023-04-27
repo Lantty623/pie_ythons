@@ -13,6 +13,7 @@ Github: \
 Concept: \
 -- Step tracker application for mobile platforms that converts user steps to a step of an animal 
 
+Here is links for the documents. They are also under the documentation folder: \
 Team Structure and Meeting: \
 -- https://docs.google.com/document/d/176ttB70p2uE0LmmhHxdMhoGIVD3n947jXiXYKspades/edit?usp=sharing
 
