@@ -13,13 +13,8 @@ Github: \
 Concept: \
 -- Step tracker application for mobile platforms that converts user steps to a step of an animal 
 
-Here is links for the documents. They are also under the documentation folder: \
-Team Structure and Meeting: \
--- https://docs.google.com/document/d/176ttB70p2uE0LmmhHxdMhoGIVD3n947jXiXYKspades/edit?usp=sharing
-
-User Stories and Scope: \
--- https://docs.google.com/document/d/1Q_1jYLXgFVITQ_D4KlP38XqJIrnu3eCdd26N737Pc0Y/edit?usp=sharing 
-
+Documentation: \
+User Stories and Scope and the Team Structure document are under documentation folder.
 
 Testing Instructions: \
 -- Download and install Animal Stepper apk \
