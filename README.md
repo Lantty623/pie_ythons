@@ -24,7 +24,7 @@ Testing Instructions: \
 -- Walk and then see facts and images of the animal you choose from the drop down menu 
 
 Troubleshooting: \
--- Make sure you have internet connection 
+-- Make sure you have internet connection \
 -- If you have no step data showing up in Animal Stepper, make sure you have another fitness app that is reading in footstep data for you \
 &nbsp;&nbsp;&nbsp;&nbsp;-- Animal Stepper will not record your footsteps by itself, but instead requires another fitness app that will record your footsteps and upload data to Health Connect \
 &nbsp;&nbsp;&nbsp;&nbsp;-- Make sure other fitness apps that measure footsteps show up in Health Connect as well, to make sure step data is accessible by Animal Stepper \
