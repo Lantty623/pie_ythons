@@ -21,7 +21,7 @@ Testing Instructions: \
 -- Install (if not already) and open the "Health Connect" app : https://play.google.com/store/apps/details?id=com.google.android.apps.healthdata \
 -- In the Health Connect app, give the Animal Stepper app permissions for step data \
   -- In Health Connect, you you should be able to see the Animal Stepper app as listed for requesting permissions. Select Animal Stepper from this menu and enable Step
-     permissions \
+     permissions \\
 -- Walk and then see facts and images of the animal you choose from the drop down menu 
 
 Troubleshooting: \
